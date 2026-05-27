@@ -2000,6 +2000,14 @@ export const MESSAGE_REGISTRY = {
       "en": "Open to auto login email link",
       "zh": "打开即可自动登录邮箱的链接"
     },
+    "randomNamePlaceholder": {
+      "en": "Leave blank to generate a random name",
+      "zh": "留空将生成随机名字"
+    },
+    "useRandomName": {
+      "en": "Use Random Name",
+      "zh": "使用随机名字"
+    },
     "randomSubdomainTip": {
       "en": "When enabled, the created address will use a random subdomain. Recommended for receiving only. Requires a wildcard MX DNS record on the base domain — see the random subdomain docs.",
       "zh": "启用后，创建出来的地址会自动挂在随机子域名下，建议仅用于收件。需要在基础域名 DNS 中配置通配 MX 记录，详见随机子域名文档。"

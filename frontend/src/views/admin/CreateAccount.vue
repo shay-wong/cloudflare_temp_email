@@ -35,8 +35,12 @@ watch(canUseRandomSubdomain, (enabled) => {
     }
 })
 
+const useRandomEmailName = () => {
+    emailName.value = ''
+}
+
 const newEmail = async () => {
-    if (!emailName.value || !emailDomain.value) {
+    if (!emailDomain.value) {
         message.error(t('fillInAllFields'))
         return
     }
@@ -81,7 +85,10 @@ onMounted(async () => {
                     <n-input-group-label v-if="enablePrefix && openSettings.prefix">
                         {{ openSettings.prefix }}
                     </n-input-group-label>
-                    <n-input v-model:value="emailName" />
+                    <n-input v-model:value="emailName" :placeholder="t('randomNamePlaceholder')" />
+                    <n-button @click="useRandomEmailName">
+                        {{ t('useRandomName') }}
+                    </n-button>
                     <n-input-group-label>@</n-input-group-label>
                     <n-select v-model:value="emailDomain" :consistent-menu-width="false"
                         :options="openSettings.domains" />

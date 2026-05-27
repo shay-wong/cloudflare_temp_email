@@ -578,6 +578,8 @@ export const esMessages = {
   "views.admin.AiExtractSettings.disabledTip": "Si está desactivado, la extracción IA procesará todas las direcciones",
   "views.admin.AiExtractSettings.enableAllowListTip": "Si está activado, la extracción IA solo procesará correos enviados a direcciones permitidas",
   "views.admin.CreateAccount.randomSubdomainTip": "Si está activado, la dirección creada usará un subdominio aleatorio. Recomendado solo para recibir. Requiere un registro MX comodín en el DNS del dominio base — consulta la documentación de subdominios aleatorios.",
+  "views.admin.CreateAccount.randomNamePlaceholder": "Déjalo vacío para generar un nombre aleatorio",
+  "views.admin.CreateAccount.useRandomName": "Usar nombre aleatorio",
   "views.common.Login.randomSubdomainTip": "Si está activado, la dirección creada usará un subdominio aleatorio. Recomendado solo para recibir. Requiere un registro MX comodín en el DNS del dominio base — consulta la documentación de subdominios aleatorios.",
   "views.admin.AiExtractSettings.allowListTip": "El comodín * coincide con cualquier carácter; p. ej., *{'@'}example.com coincide con todas las direcciones del dominio example.com",
   "views.Admin.workerconfig": "Configuración del Worker",

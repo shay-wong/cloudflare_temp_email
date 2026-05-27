@@ -578,6 +578,8 @@ export const jaMessages = {
   "views.admin.AiExtractSettings.disabledTip": "無効時は AI 抽出がすべてのメールアドレスを処理します",
   "views.admin.AiExtractSettings.enableAllowListTip": "有効時は AI 抽出は許可リストのアドレス宛メールのみ処理します",
   "views.admin.CreateAccount.randomSubdomainTip": "有効時は作成されるアドレスがランダムなサブドメインを使用します。受信専用として推奨されます。ベースドメインの DNS にワイルドカード MX レコードの設定が必要です — ランダムサブドメインのドキュメントを参照してください。",
+  "views.admin.CreateAccount.randomNamePlaceholder": "空欄にするとランダム名を生成します",
+  "views.admin.CreateAccount.useRandomName": "ランダム名を使用",
   "views.common.Login.randomSubdomainTip": "有効時は作成されるアドレスがランダムなサブドメインを使用します。受信専用として推奨されます。ベースドメインの DNS にワイルドカード MX レコードの設定が必要です — ランダムサブドメインのドキュメントを参照してください。",
   "views.admin.AiExtractSettings.allowListTip": "ワイルドカード * は任意の文字に一致します。例: *{'@'}example.com は example.com ドメイン配下のすべてのアドレスに一致します",
   "views.Admin.workerconfig": "Worker設定",

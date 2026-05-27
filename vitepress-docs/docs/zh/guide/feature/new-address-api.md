@@ -25,6 +25,7 @@ res = requests.post(
     json={
         # 是否启用前缀 (True/False)
         "enablePrefix": True,
+        # name 可留空，后端会自动生成随机邮箱名称
         "name": "<邮箱名称>",
         "domain": "<邮箱域名>",
     },

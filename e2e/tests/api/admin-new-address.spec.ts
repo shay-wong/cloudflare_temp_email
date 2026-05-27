@@ -17,6 +17,32 @@ test.describe('Admin New Address', () => {
     expect(typeof body.address_id).toBe('number');
   });
 
+  test('generates random address name when admin omits name', async ({ request }) => {
+    const res = await request.post(`${WORKER_URL}/admin/new_address`, {
+      data: { domain: TEST_DOMAIN },
+    });
+
+    expect(res.ok()).toBe(true);
+    const body = await res.json();
+
+    expect(body.address).toMatch(new RegExp(`^[a-z0-9]+@${TEST_DOMAIN.replace(/\./g, '\\.')}$`));
+    expect(body.jwt).toBeTruthy();
+    expect(body.address_id).toBeGreaterThan(0);
+  });
+
+  test('adds prefix to random admin address name when enabled', async ({ request }) => {
+    const res = await request.post(`${WORKER_URL}/admin/new_address`, {
+      data: { name: '', domain: TEST_DOMAIN, enablePrefix: true },
+    });
+
+    expect(res.ok()).toBe(true);
+    const body = await res.json();
+
+    expect(body.address).toMatch(new RegExp(`^tmp[a-z0-9]+@${TEST_DOMAIN.replace(/\./g, '\\.')}$`));
+    expect(body.jwt).toBeTruthy();
+    expect(body.address_id).toBeGreaterThan(0);
+  });
+
   test('normalizes uppercase configured prefix and domain', async ({ request }) => {
     const uniqueName = `admincase${Date.now()}`;
     const res = await request.post(`${WORKER_URL}/admin/new_address`, {

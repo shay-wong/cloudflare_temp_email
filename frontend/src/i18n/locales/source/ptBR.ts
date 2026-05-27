@@ -578,6 +578,8 @@ export const ptBRMessages = {
   "views.admin.AiExtractSettings.disabledTip": "Quando desativado, a extração por IA processará todos os endereços",
   "views.admin.AiExtractSettings.enableAllowListTip": "Quando ativado, a extração por IA só processará e-mails enviados aos endereços permitidos",
   "views.admin.CreateAccount.randomSubdomainTip": "Quando ativado, o endereço criado usará um subdomínio aleatório. Recomendado apenas para recebimento. Requer um registro MX curinga no DNS do domínio base — consulte a documentação de subdomínios aleatórios.",
+  "views.admin.CreateAccount.randomNamePlaceholder": "Deixe em branco para gerar um nome aleatório",
+  "views.admin.CreateAccount.useRandomName": "Usar nome aleatório",
   "views.common.Login.randomSubdomainTip": "Quando ativado, o endereço criado usará um subdomínio aleatório. Recomendado apenas para recebimento. Requer um registro MX curinga no DNS do domínio base — consulte a documentação de subdomínios aleatórios.",
   "views.admin.AiExtractSettings.allowListTip": "O curinga * corresponde a quaisquer caracteres; ex.: *{'@'}example.com corresponde a todos os endereços do domínio example.com",
   "views.Admin.workerconfig": "Configuração do Worker",

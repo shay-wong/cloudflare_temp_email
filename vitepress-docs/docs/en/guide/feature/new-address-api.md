@@ -25,6 +25,7 @@ res = requests.post(
     json={
         # Enable prefix (True/False)
         "enablePrefix": True,
+        # name can be blank; the backend will generate a random mailbox name
         "name": "<email_name>",
         "domain": "<email_domain>",
     },

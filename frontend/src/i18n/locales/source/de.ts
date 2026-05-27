@@ -578,6 +578,8 @@ export const deMessages = {
   "views.admin.AiExtractSettings.disabledTip": "Wenn deaktiviert, verarbeitet die KI-Extraktion alle E-Mail-Adressen",
   "views.admin.AiExtractSettings.enableAllowListTip": "Wenn aktiviert, verarbeitet die KI-Extraktion nur E-Mails an Adressen auf der Freigabeliste",
   "views.admin.CreateAccount.randomSubdomainTip": "Wenn aktiviert, verwendet die erstellte Adresse eine zufällige Subdomain. Nur für den Empfang empfohlen. Erfordert einen Wildcard-MX-DNS-Eintrag auf der Basisdomain — siehe die Dokumentation zu zufälligen Subdomains.",
+  "views.admin.CreateAccount.randomNamePlaceholder": "Leer lassen, um einen zufälligen Namen zu erzeugen",
+  "views.admin.CreateAccount.useRandomName": "Zufälligen Namen verwenden",
   "views.common.Login.randomSubdomainTip": "Wenn aktiviert, verwendet die erstellte Adresse eine zufällige Subdomain. Nur für den Empfang empfohlen. Erfordert einen Wildcard-MX-DNS-Eintrag auf der Basisdomain — siehe die Dokumentation zu zufälligen Subdomains.",
   "views.admin.AiExtractSettings.allowListTip": "Der Platzhalter * passt auf beliebige Zeichen; z. B. passt *{'@'}example.com auf alle Adressen der Domain example.com",
   "views.Admin.workerconfig": "Worker-Konfiguration",
