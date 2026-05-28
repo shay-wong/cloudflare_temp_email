@@ -41,7 +41,18 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WORKFLOW_RUN_HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          DOCS_PAGES_PROJECT_NAME: ${{ vars.DOCS_PAGES_PROJECT_NAME }}
+          DOCS_PAGES_BRANCH: ${{ vars.DOCS_PAGES_BRANCH || 'production' }}
         run: |
+          if [ -z "$DOCS_PAGES_PROJECT_NAME" ]; then
+            if [ "$GITHUB_REPOSITORY" = "dreamhunter2333/cloudflare_temp_email" ]; then
+              DOCS_PAGES_PROJECT_NAME="temp-mail-docs"
+            else
+              echo "Skipping docs deploy because DOCS_PAGES_PROJECT_NAME is not configured."
+              exit 0
+            fi
+          fi
+
           cd vitepress-docs/
           wget https://github.com/dreamhunter2333/cloudflare_temp_email/releases/latest/download/frontend.zip -O docs/public/ui_install/frontend.zip
           pnpm install --no-frozen-lockfile
@@ -53,4 +64,5 @@ jobs:
           fi
           echo "Deploying docs for tag $TAG_NAME"
           export TAG_NAME
-          pnpm run deploy
+          pnpm run build
+          pnpm exec wrangler pages deploy ./docs/.vitepress/dist --project-name="$DOCS_PAGES_PROJECT_NAME" --branch "$DOCS_PAGES_BRANCH"

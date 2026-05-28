@@ -22,6 +22,7 @@
 - fix: |Address| 统一规范化配置域名、收件地址域名与前缀的空白和大小写，覆盖 `DOMAINS`、`DEFAULT_DOMAINS`、`USER_ROLES.domains`、随机子域名、转发规则、SMTP 与 `SEND_MAIL` 域名匹配，保留转发规则空域名 catch-all 行为，并明确空 `DEFAULT_DOMAINS` / 角色域名回退到 `DOMAINS` 的行为，避免大小写配置或入站收件域名导致创建、收件、转发或发信失败（issue #926）
 - fix: |AI 提取| 将 AI 邮件识别默认 Workers AI 模型切换为支持 JSON Mode 且未弃用的 `@cf/meta/llama-3.1-8b-instruct-fast`，并在文档中补充 `@cf/zai-org/glm-4.7-flash` 结构化输出兼容性提示（issue #1029）
 - fix: |CI| Tag Build CI 在上传构建产物前会先检查 GitHub Release 是否存在，不存在时自动用当前 tag 创建 Release，避免 `gh release upload` 因 `release not found` 中断
+- fix: |CI| 文档部署改为支持通过 `DOCS_PAGES_PROJECT_NAME` / `DOCS_PAGES_BRANCH` 指定 Cloudflare Pages 项目；fork 仓库未配置项目名时跳过部署，避免因默认 `temp-mail-docs` 项目不存在导致 workflow 失败
 - fix: |CI| 将 GitHub Actions 与 e2e Docker 镜像统一升级到 Node.js 24，适配 Wrangler 4.90.0 的运行时要求
 - fix: |Frontend| 修复 iOS Safari 点击输入框时因移动端表单控件字号过小导致页面自动放大的问题
 

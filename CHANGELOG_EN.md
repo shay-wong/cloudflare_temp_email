@@ -22,6 +22,7 @@
 - fix: |Address| Normalize whitespace and casing for configured domains, inbound recipient domains, and prefixes across `DOMAINS`, `DEFAULT_DOMAINS`, `USER_ROLES.domains`, random subdomains, forwarding rules, SMTP, and `SEND_MAIL` domain matching, preserve blank-domain catch-all forwarding rules, and clarify that empty `DEFAULT_DOMAINS` / role domains fall back to `DOMAINS`, to avoid create, receive, forward, or send failures caused by mixed-case configuration or inbound recipient domains (issue #926)
 - fix: |AI Extract| Switch the default Workers AI model for AI email recognition to the JSON Mode-compatible, non-deprecated `@cf/meta/llama-3.1-8b-instruct-fast`, and document structured-output compatibility guidance for `@cf/zai-org/glm-4.7-flash` (issue #1029)
 - fix: |CI| Make Tag Build CI check whether the GitHub Release exists before uploading build artifacts, and create it from the current tag when missing so `gh release upload` no longer fails with `release not found`
+- fix: |CI| Allow docs deployment to use `DOCS_PAGES_PROJECT_NAME` / `DOCS_PAGES_BRANCH` for the Cloudflare Pages target, and skip deployment in forks when no docs project name is configured to avoid failing on the default `temp-mail-docs` project
 - fix: |CI| Upgrade GitHub Actions and e2e Docker images to Node.js 24 to satisfy Wrangler 4.90.0 runtime requirements
 - fix: |Frontend| Prevent iOS Safari from auto-zooming the page when focusing mobile form controls with small font sizes
 
