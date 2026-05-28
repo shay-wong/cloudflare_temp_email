@@ -4,6 +4,7 @@ import { useScopedI18n } from '@/i18n/app'
 
 import { useGlobalState } from '../../store'
 import { api } from '../../api'
+import { generateRandomAddressName } from '../../utils/random-name'
 import AddressCredentialModal from '../../components/AddressCredentialModal.vue'
 
 const {
@@ -36,7 +37,7 @@ watch(canUseRandomSubdomain, (enabled) => {
 })
 
 const useRandomEmailName = () => {
-    emailName.value = ''
+    emailName.value = generateRandomAddressName(openSettings.value.maxAddressLen)
 }
 
 const newEmail = async () => {
